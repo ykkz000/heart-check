@@ -1,0 +1,165 @@
+<!--
+  ~ heart-check
+  ~ Copyright (C) 2024  ykkz000
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="library/layui/css/layui.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="library/jquery/jquery-3.7.1.min.js"></script>
+    <script src="library/layui/layui.js"></script>
+    <script src="library/i18n/jquery.i18n.properties.js"></script>
+    <script src="js/global.js"></script>
+    <title>Heart Check</title>
+</head>
+<body>
+<div class="header"></div>
+<main>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        <h2 data-i18n="heart-check.form.title"></h2>
+                    </div>
+                    <div class="layui-card-body">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.age"></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="age" required lay-verify="required|number" data-i18n-placeholder="heart-check.form.age"
+                                           autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.sex"></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="sex" value="1" data-i18n-title="heart-check.form.sex.male" checked/>
+                                    <input type="radio" name="sex" value="0" data-i18n-title="heart-check.form.sex.female"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.cp"></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="cp" value="1" data-i18n-title="heart-check.form.cp.type1"/>
+                                    <input type="radio" name="cp" value="2" data-i18n-title="heart-check.form.cp.type2"/>
+                                    <input type="radio" name="cp" value="3" data-i18n-title="heart-check.form.cp.type3"/>
+                                    <input type="radio" name="cp" value="4" data-i18n-title="heart-check.form.cp.type4" checked/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.trestbps"></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="trestbps" required lay-verify="required|number"
+                                           data-i18n-placeholder="heart-check.form.trestbps" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.chol"></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="chol" required lay-verify="required|number"
+                                           data-i18n-placeholder="heart-check.form.chol" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.fbs"></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="fbs" value="0" data-i18n-title="heart-check.form.fbs.type0" checked/>
+                                    <input type="radio" name="fbs" value="1" data-i18n-title="heart-check.form.fbs.type1"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.thalach"></label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="thalach" required lay-verify="required|number"
+                                           data-i18n-placeholder="heart-check.form.thalach" autocomplete="off" class="layui-input"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.exang"></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="exang" value="0" data-i18n-title="heart-check.form.exang.type0" checked/>
+                                    <input type="radio" name="exang" value="1" data-i18n-title="heart-check.form.exang.type1"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" data-i18n="heart-check.form.thal"></label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="thal" value="0" data-i18n-title="heart-check.form.thal.type0" checked/>
+                                    <input type="radio" name="thal" value="1" data-i18n-title="heart-check.form.thal.type1"/>
+                                    <input type="radio" name="thal" value="2" data-i18n-title="heart-check.form.thal.type2"/>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button type="button" class="layui-btn lay-submit lay-filter=formDemo" lay-submit lay-filter="heart-check-form" data-i18n="heart-check.form.submit"></button>
+                                    <button type="reset" class="layui-btn layui-btn-primary" data-i18n="heart-check.form.reset"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="footer"></div>
+<script>
+    let regexp = /^[0-9]+(\.[0-9]+)?$/;
+    layui.use(['form', '$', 'i18n'], function () {
+        let form = layui.form;
+        let $ = layui.$;
+        let i18n = layui.i18n;
+        form.on('submit(heart-check-form)', function (data) {
+            let requestString = "heartCheck";
+            requestString += "?age=" + $("input[name='age']").val();
+            requestString += "&sex=" + $("input[name='sex']:checked").val();
+            requestString += "&cp=" + $("input[name='cp']:checked").val();
+            requestString += "&trestbps=" + $("input[name='trestbps']").val();
+            requestString += "&chol=" + $("input[name='chol']").val();
+            requestString += "&fbs=" + $("input[name='fbs']:checked").val();
+            requestString += "&thalach=" + $("input[name='thalach']").val();
+            requestString += "&exang=" + $("input[name='exang']:checked").val();
+            requestString += "&thal=" + $("input[name='thal']:checked").val();
+            window.cefQuery({
+                request: requestString,
+                persistent: false,
+                onSuccess: function (response) {
+                    let result = $.parseJSON(response);
+                    let bodyString = i18n.prop("heart-check.form.result").format(result.Positive, result.Negative);
+                    layer.alert(bodyString, {
+                        icon: 1,
+                        shadeClose: true,
+                        title: $("document").title,
+                    })
+                },
+                onFailure: function (code, msg) {
+                    layer.alert(msg, {
+                        icon: 2,
+                        shadeClose: true,
+                        title: $("document").title,
+                    })
+                }
+            });
+            return true;
+        });
+    });
+</script>
+</body>
+</html>

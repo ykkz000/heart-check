@@ -1,0 +1,50 @@
+<!--
+  ~ heart-check
+  ~ Copyright (C) 2024  ykkz000
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<header>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md6">
+                <h1 data-i18n="heart-check.title"></h1>
+            </div>
+            <div class="layui-form layui-col-md-offset3 layui-col-md3 layui-row">
+                <label class="layui-form-label layui-col-md-offset3 layui-col-md3" data-i18n="heart-check.language"></label>
+                <div class="layui-col-md6 layui-input-inline">
+                    <select name="language" lay-filter="language">
+                        <option value="en-US" selected>English</option>
+                        <option value="zh-CN">简体中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        layui.use('form', function () {
+            let form = layui.form;
+            let i18n = layui.i18n;
+            i18n.loadLang('en-US');
+            form.render();
+            form.on('select(language)', function (data) {
+                if (i18n !== undefined) {
+                    i18n.loadLang(data.value);
+                }
+                form.render();
+            })
+        })
+    </script>
+</header>

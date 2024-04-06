@@ -1,0 +1,8 @@
+yukikaze:
+  cef:
+    url: file("web/index.html")
+    frame:
+      title: Heart Check
+      resizeable: true
+      width: 1524
+      height: 800

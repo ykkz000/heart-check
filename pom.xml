@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ heart-check
+  ~ Copyright (C) 2024  ykkz000
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pers.ykkz000</groupId>
+    <artifactId>heartcheck</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jackson.version>2.16.1</jackson.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <asm.version>9.6</asm.version>
+        <dl4j.core.version>1.0.0-M2.1</dl4j.core.version>
+        <cuda.version>11.6</cuda.version>
+        <jcef.version>116.0.19</jcef.version>
+        <jcef-natives.version>jcef-37f25dc+cef-116.0.19+gc6a20bc+chromium-116.0.5845.141</jcef-natives.version>
+        <logback.version>1.1.8</logback.version>
+        <janino.version>3.1.11</janino.version>
+        <lombok.version>1.18.30</lombok.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-core</artifactId>
+            <version>${dl4j.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <artifactId>nd4j-cuda-${cuda.version}-platform</artifactId>
+            <version>${dl4j.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcefmaven</artifactId>
+            <version>${jcef.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>${janino.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-linux-amd64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-linux-arm64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-linux-arm</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-windows-amd64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-windows-i386</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-windows-arm64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-macosx-amd64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.friwi</groupId>
+            <artifactId>jcef-natives-macosx-arm64</artifactId>
+            <version>${jcef-natives.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>libs/</classpathPrefix>
+                            <mainClass>pers.ykkz000.heartcheck.MainApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/libs
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
